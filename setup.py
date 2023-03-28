@@ -5,7 +5,7 @@ setup(
     version="1.1.0",
     packages=find_packages(),
     install_requires=[
-        "deep-translator",
+        "deep_translator",
         "pandas",
         "numpy",
         "nltk",

@@ -6,7 +6,8 @@ from deep_translator import GoogleTranslator
                              
 # Input information
 root = os.getcwd()                               # working directory
-data_name = 'Importancia_pipelines.docx'      # data with the column to be translated (must be in a csv file)
+data_path = os.path.join(root, 'test_codes', 'translate_docs')
+data_name = 'Importancia_pipelines.docx'         # data with the column to be translated (must be in a csv file)
 # Translate specs
 target_language = 'en'                           # target language
 Translator = GoogleTranslator                    # Available translators: GoogleTranslator, MicrosoftTranslator, PonsTranslator, LingueeTranslator, MyMemoryTranslator, 
@@ -16,7 +17,7 @@ output_name = target_language.upper() + '_' + data_name
 
 
 # ---------------------------------- Dataset read -----------------------------------------------
-text = read_word_document(root, data_name)
+text = read_word_document(data_path, data_name)
 
 # ----------------------------- Translate the text ----------------------------------------------  
 translated_text = machine_translator_doc(target_language, root, text, data_name, Translator)

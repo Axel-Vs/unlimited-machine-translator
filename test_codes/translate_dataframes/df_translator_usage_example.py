@@ -7,6 +7,7 @@ from deep_translator import GoogleTranslator
 
 # Input information
 root = os.getcwd()                               # working directory
+data_path = os.path.join(root, 'test_codes', 'translate_dataframes')
 data_set_name = 'sample_data_project_names.csv'  # data with the column to be translated (must be in a csv file)
 # Translate specs
 target_language = 'en'                           # target language
@@ -18,7 +19,7 @@ output_name = target_language.upper() + '_' + data_set_name
 
 
 # ---------------------------------- Dataset read -----------------------------------------------
-data_set = pd.read_csv(os.path.join(root, data_set_name))
+data_set = pd.read_csv(os.path.join(data_path, data_set_name))
 
 # -------------------- Translate datset by batches (stored in multiple .csv) ---------------------
 stored_location = machine_translator_df(target_language, root, data_set, column_name, output_name, Translator)

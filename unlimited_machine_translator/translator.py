@@ -6,7 +6,7 @@ import docx
 import re
 from nltk.tokenize import sent_tokenize
 
-warnings.filterwarnings('ignore')
+# warnings.filterwarnings('ignore')
 
 
 def makemydir(current_wd, new_directory):
@@ -145,7 +145,9 @@ def store_translation(data_set, output_path, output_name):
     """   
 
     # csv
-    output_final = os.path.join(output_path, output_name + '.csv')
+    output_name_without_extension = output_name.replace(".csv", "")
+
+    output_final = os.path.join(output_path, output_name_without_extension + '.csv')
     data_set.to_csv(output_final, encoding='utf-16', index=False)
     print('Final stored in:', output_final, '\n')
 
