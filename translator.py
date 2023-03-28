@@ -25,7 +25,6 @@ def makemydir(current_wd, new_directory):
     # cd into the specified directory
     os.chdir(new_directory)
     
-    
 # --------------------------------------------- DataFrame Machine Translator ---------------------------------------------
 def machine_translator_df(target_language, current_wd, df, column_name, data_set_name, Translator):
     """
