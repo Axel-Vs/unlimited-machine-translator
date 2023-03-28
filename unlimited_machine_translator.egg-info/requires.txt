@@ -1,0 +1,5 @@
+deep_translator
+pandas
+numpy
+nltk
+python-docx
