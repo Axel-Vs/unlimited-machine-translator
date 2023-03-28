@@ -10,6 +10,10 @@ env/
 *.venv
 .venv/
 
+
+unlimited_machine_translator.egg-info/
+
+
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
