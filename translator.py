@@ -4,7 +4,6 @@ import warnings
 import os
 import docx
 import re
-
 from nltk.tokenize import sent_tokenize
 
 warnings.filterwarnings('ignore')
@@ -164,7 +163,6 @@ def read_word_document(root, data_set_name):
         str: A string containing the text contents of the Word document.
 
     """
-
     # Construct the full file path by joining the specified root directory and document filename
     file_path = os.path.join(root, data_set_name)
     # Open the Word document using the python-docx library
@@ -191,7 +189,6 @@ def save_text_to_docx(root, text, output_filename):
         None.
 
     """
-        
     # Create a new Word document and add a new paragraph containing the input text
     document = docx.Document()
     document.add_paragraph(text)
