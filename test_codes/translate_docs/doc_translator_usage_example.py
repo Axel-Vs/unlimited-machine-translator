@@ -1,3 +1,5 @@
+# This script translates the text in a Word document (.docx) file using the unlimited_machine_translator package and the deep_translator package. 
+
 import os
 from unlimited_machine_translator.translator import read_word_document, save_text_to_docx, machine_translator_doc
 from deep_translator import GoogleTranslator

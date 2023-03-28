@@ -1,5 +1,4 @@
-# This script is designed to translate the contents of a specific column in a given CSV file into a specified target language. 
-# The input CSV file should contain a column with the project names to be translated.
+# This script translates the text of dataframe (.csv) file using the unlimited_machine_translator package and the deep_translator package. 
 
 import os
 import pandas as pd
