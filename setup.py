@@ -10,5 +10,6 @@ setup(
         "numpy",
         "nltk",
         "python-docx",
+        "re",
     ],
 )
