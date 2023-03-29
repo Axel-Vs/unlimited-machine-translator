@@ -53,7 +53,8 @@ translated_data = machine_translator_df(data_set=data, column_name="text_column"
 translated_data.to_csv("translated_dataset.csv", index=False)
 ```
 
-For more examples check the folder "test_codes"
+For additional examples and use cases, please refer to the "test_codes" directory in the repository.
+
 
 ## Supported Translation APIs
 Currently, the Unlimited Machine Translator primarily supports Google Translate API. In the future, it will be extended to support other translation services, such as:
