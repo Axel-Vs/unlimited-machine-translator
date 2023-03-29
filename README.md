@@ -12,6 +12,12 @@ Translate all your data frame and doc files without restrictions! The Unlimited 
 
 To install the Unlimited Machine Translator, run the following command:
 
+1. Install from PyPI:
+```bash
+pip install git+https://github.com/Axel-Vs/unlimited_machine_translator.git
+```
+
+2. Install the latest version from the GitHub repository:
 ```bash
 pip install git+https://github.com/Axel-Vs/unlimited_machine_translator.git
 ```
@@ -30,6 +36,7 @@ pip install git+https://github.com/Axel-Vs/unlimited_machine_translator.git
 After installing the package, you can use it in your Python scripts or Jupyter notebooks like this:
 
 ```python
+import os
 import pandas as pd
 from deep_translator import GoogleTranslator
 from unlimited_machine_translator.translator import machine_translator_df
