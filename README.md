@@ -1,5 +1,4 @@
 # Unlimited Machine Translator
-
 [![Latest Release](https://img.shields.io/pypi/v/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
 [![License](https://img.shields.io/pypi/l/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://github.com/Axel-Vs/unlimited_machine_translator/blob/main/LICENSE)
 [![Wheel](https://img.shields.io/pypi/wheel/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
@@ -11,8 +10,7 @@ Translate all your data frame and doc files without restrictions! The Unlimited 
 
 
 ## Installation
-
-To install the Unlimited Machine Translator, run the following command:
+To install the Unlimited Machine Translator, run the following commands
 
 1. Install from PyPI:
 ```bash
@@ -24,8 +22,8 @@ pip install unlimited-machine-translator
 pip install git+https://github.com/Axel-Vs/unlimited_machine_translator.git
 ```
 
-## Features
 
+## Features
 - Translate entire data frames with ease
 - Supports multiple translation APIs
 - Handles API limitations and restrictions by translating data in batches
@@ -34,11 +32,10 @@ pip install git+https://github.com/Axel-Vs/unlimited_machine_translator.git
 
 
 ## Usage
-
 After installing the package, you can use it in your Python scripts or Jupyter notebooks like this:
 
-### Data Frame Translation Example
 
+### Data Frame Translation Example
 ```python
 import os
 import pandas as pd
@@ -74,7 +71,6 @@ translated_text = machine_translator_doc(text, target_language='es', source_lang
 save_text_to_docx(os.getcwd(), translated_text, "translated_book.docx")
 ```
 
-
 For additional examples and use cases, please refer to the "test_codes" directory in the repository.
 
 
@@ -84,7 +80,6 @@ Currently, the Unlimited Machine Translator primarily supports Google Translate 
 - DeepL Translator
 - Microsoft Translator
 - Yandex.Translate
-
 
 
 ## Contributions
