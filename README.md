@@ -38,7 +38,8 @@ from unlimited_machine_translator.translator import machine_translator_df
 data = pd.read_csv("your_dataset.csv")
 
 # Translate the desired column
-translated_data = machine_translator_df(data_set=data, column_name="text_column", target_language="en", Translator=GoogleTranslator, current_wd=os.getcwd())
+translated_data = machine_translator_df(data_set=data, column_name="text_column", target_language="en", source_language='auto', 
+                                        Translator=GoogleTranslator, current_wd=os.getcwd())
 
 # Save the translated data
 translated_data.to_csv("translated_dataset.csv", index=False)
