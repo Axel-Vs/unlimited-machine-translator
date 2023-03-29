@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="unlimited_machine_translator",
-    version="1.1.2",
+    version="1.1.3",
     description="A package for unlimited machine translation",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -16,7 +16,6 @@ setup(
         "python-docx",
     ],
     classifiers=[
-        "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
@@ -25,6 +24,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Development Status :: 5 - Production/Stable",
     ],
     python_requires=">=3.6",
 )
