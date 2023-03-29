@@ -259,7 +259,7 @@ def machine_translator_doc(text, target_language, source_language, Translator, c
     df_merged_translation = merge_csvs(target_language, stored_location, df, 'Sentence')
 
     # Join the translated sentences with spaces and replace consecutive hyphens with newlines
-    translated_text = " ".join(df_merged_translation['Sentence_en'])
+    translated_text = " ".join(df_merged_translation['Sentence_' + target_language])
     #replace_consecutive
     result=replace_consecutive_chars(translated_text ,'-')
 
