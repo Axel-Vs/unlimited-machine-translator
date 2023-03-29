@@ -4,7 +4,11 @@ import warnings
 import os
 import docx
 import re
+import nltk
+
 from nltk.tokenize import sent_tokenize
+nltk.download('punkt')
+
 
 # warnings.filterwarnings('ignore')
 
