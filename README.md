@@ -37,6 +37,8 @@ pip install git+https://github.com/Axel-Vs/unlimited_machine_translator.git
 
 After installing the package, you can use it in your Python scripts or Jupyter notebooks like this:
 
+### Data Frame Translation Example
+
 ```python
 import os
 import pandas as pd
@@ -55,6 +57,24 @@ translated_data = machine_translator_df(data_set=data, column_name="text_column"
 translated_data.to_csv("translated_dataset.csv", index=False)
 ```
 
+### Document Translation Example
+```python
+import os
+from deep_translator import GoogleTranslator
+from unlimited_machine_translator.translator import read_word_document, machine_translator_doc, save_text_to_docx
+
+# Load your text
+text = read_word_document(os.getcwd(), "your_book.docx")
+
+# Translate the information
+translated_text = machine_translator_doc(text, target_language='es', source_language='auto', 
+                                         Translator=GoogleTranslator, current_wd=os.getcwd())
+
+# Store the translation
+save_text_to_docx(os.getcwd(), translated_text, "translated_book.docx")
+```
+
+
 For additional examples and use cases, please refer to the "test_codes" directory in the repository.
 
 
@@ -65,7 +85,6 @@ Currently, the Unlimited Machine Translator primarily supports Google Translate 
 - Microsoft Translator
 - Yandex.Translate
 
-To use a different translation service, you can easily extend the package by implementing a new translator class that inherits from the base Translator class.
 
 
 ## Contributions

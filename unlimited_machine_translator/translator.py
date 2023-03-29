@@ -224,16 +224,16 @@ def replace_consecutive_chars(text, pattern='-'):
 
 
 
-def machine_translator_doc(text, target_language, source_language, Translator, root):
+def machine_translator_doc(text, target_language, source_language, Translator, current_wd):
     """
     This function takes in text data stored in a Word document and translates it into the target language using the specified machine translation service provider.
 
     Args:
-        target_language (str): The target language for translation.
-        root (str): The root directory where the Word document is stored.
         text (str): The text data from the Word document.
-        data_name (str): Abbreviation name for storing purposes.
+        target_language (str): The target language for translation.      
+        source_language
         Translator (object): The machine translation service provider to use.
+        current_wd (str): The root directory where the Word document is stored.
 
     Returns:
         str: The translated text.
@@ -249,7 +249,7 @@ def machine_translator_doc(text, target_language, source_language, Translator, r
     # Convert it to df in order to use the function "machine_translator_split"
     df = pd.DataFrame(sentences, columns=['Sentence'])
     # Call the machine_translator_split function to perform the translation
-    stored_location= machine_translator_split(target_language, source_language, root, df, 'Sentence', Translator)
+    stored_location= machine_translator_split(target_language, source_language, current_wd, df, 'Sentence', Translator)
 
     # Merge the translated CSV files into a complete translated DataFrame
     df_merged_translation = merge_csvs(target_language, stored_location, df, 'Sentence')
