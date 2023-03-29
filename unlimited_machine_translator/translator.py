@@ -9,8 +9,7 @@ import nltk
 from nltk.tokenize import sent_tokenize
 nltk.download('punkt')
 
-
-# warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore')
 
 
 def makemydir(current_wd, new_directory):
