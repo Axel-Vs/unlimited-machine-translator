@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="unlimited_machine_translator",
     version="1.1.4",
-    description="A package for unlimited machine translation",
+    description="A package for perform unlimited machine translation via batches",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/Axel-Vs/unlimited_machine_translator",
