@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="unlimited_machine_translator",
-    version="1.1.4",
+    version="1.1.5",
     description="A package for perform unlimited machine translation via batches",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
