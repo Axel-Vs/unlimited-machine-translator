@@ -25,7 +25,7 @@ def makemydir(current_wd, new_directory):
     os.chdir(new_directory)
     
 # --------------------------------------------- DataFrame Machine Translator ---------------------------------------------
-def machine_translator_split(target_language, current_wd, df, column_name, Translator):
+def machine_translator_split(target_language, source_language, current_wd, df, column_name, Translator):
     """
     Splits the column to be translated into batches, according to the translator we could have different limits in characters, e.g., google translator limit is 5,000 in one request.
     Stores the batches in CSVs.
@@ -71,7 +71,7 @@ def machine_translator_split(target_language, current_wd, df, column_name, Trans
         text_to_translate = source_to_translate[column_name]
 
         # Translate
-        translated_df = Translator(source='auto', target=target_language).translate_batch(text_to_translate.tolist())
+        translated_df = Translator(source=source_language, target=target_language).translate_batch(text_to_translate.tolist())
         
         # Gather translation
         new_column_name = column_name + '_' + target_language
@@ -127,9 +127,9 @@ def merge_csvs(target_language, stored_location, df, column_name):
     return all_df
 
     
-def machine_translator_df(data_set, column_name, target_language, Translator, current_wd):
+def machine_translator_df(data_set, column_name, target_language, source_language, Translator, current_wd):
     # -------------------- Translate datset by batches (stored in multiple .csv) ---------------------
-    stored_location = machine_translator_split(target_language, current_wd, data_set, column_name, Translator)
+    stored_location = machine_translator_split(target_language, source_language, current_wd, data_set, column_name, Translator)
     print('Dataset was divided by batches located in:', stored_location)
     # ----------------------------- Merge the translated .csv files -----------------------------------
     df_merged_translation = merge_csvs(target_language, stored_location, data_set, column_name)
@@ -224,7 +224,7 @@ def replace_consecutive_chars(text, pattern='-'):
 
 
 
-def machine_translator_doc(text, target_language, Translator, root):
+def machine_translator_doc(text, target_language, source_language, Translator, root):
     """
     This function takes in text data stored in a Word document and translates it into the target language using the specified machine translation service provider.
 
@@ -249,7 +249,7 @@ def machine_translator_doc(text, target_language, Translator, root):
     # Convert it to df in order to use the function "machine_translator_split"
     df = pd.DataFrame(sentences, columns=['Sentence'])
     # Call the machine_translator_split function to perform the translation
-    stored_location= machine_translator_split(target_language, root, df, 'Sentence', Translator)
+    stored_location= machine_translator_split(target_language, source_language, root, df, 'Sentence', Translator)
 
     # Merge the translated CSV files into a complete translated DataFrame
     df_merged_translation = merge_csvs(target_language, stored_location, df, 'Sentence')
