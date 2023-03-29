@@ -14,7 +14,7 @@ To install the Unlimited Machine Translator, run the following command:
 
 1. Install from PyPI:
 ```bash
-pip install git+https://github.com/Axel-Vs/unlimited_machine_translator.git
+pip install unlimited-machine-translator
 ```
 
 2. Install the latest version from the GitHub repository:
