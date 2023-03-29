@@ -58,7 +58,11 @@ translated_data.to_csv("translated_dataset.csv", index=False)
 ```python
 import os
 from deep_translator import GoogleTranslator
-from unlimited_machine_translator.translator import read_word_document, machine_translator_doc, save_text_to_docx
+from unlimited_machine_translator.translator import (
+    read_word_document,
+    machine_translator_doc,
+    save_text_to_docx
+)
 
 # Load your text
 text = read_word_document(os.getcwd(), "your_book.docx")
