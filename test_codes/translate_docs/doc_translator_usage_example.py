@@ -3,8 +3,8 @@
 import os
 from unlimited_machine_translator.translator import read_word_document, save_text_to_docx, machine_translator_doc
 from deep_translator import GoogleTranslator
-        
-                             
+
+
 # ------------------------------------- Input information --------------------------------------
 # Data info
 data_path = os.path.join(os.getcwd(), 'test_codes', 'translate_docs')
