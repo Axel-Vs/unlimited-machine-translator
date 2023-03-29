@@ -10,8 +10,10 @@ env/
 *.venv
 .venv/
 
-
+# Package extras
 unlimited_machine_translator.egg-info/
+build/
+dist/
 
 
 # Ignore Jupyter Notebook checkpoints
