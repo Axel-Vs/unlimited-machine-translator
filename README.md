@@ -5,9 +5,7 @@
 [![Wheel](https://img.shields.io/pypi/wheel/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
 [![Powered by deep-translator](https://img.shields.io/badge/Powered%20by-deep--translator-black?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/deep-translator/)
 [![Status](https://img.shields.io/pypi/status/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=green)](https://pypi.org/project/unlimited_machine_translator/)
-[![Downloads](https://pepy.tech/badge/unlimited-machine-translator)](https://pepy.tech/project/unlimited-machine-translator)
-
-
+[![Downloads](https://img.shields.io/pypi/dm/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
 
 Translate all your data frame and doc files without restrictions! The Unlimited Machine Translator is a Python package that makes it easy to translate large datasets using Google Translate API. Powered by [`deep-translator`](https://pypi.org/project/deep-translator/). The unlimited_machine_translation package offers automatic language detection and removes translation limits by processing data in batches.
 

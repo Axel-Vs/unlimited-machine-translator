@@ -10,7 +10,7 @@ from deep_translator import GoogleTranslator
 data_path = os.path.join(os.getcwd(), 'test_codes', 'translate_dataframes')
 data_set_name = 'sample_data_project_names.csv'  # Data with the column to be translated (must be in a csv file)
 # Translate specs
-target_language = 'en'                           
+target_language = 'es'                           
 source_language = 'auto'
 column_name = 'Project_Name'                     # Column to be translated
 Translator = GoogleTranslator                    
