@@ -1,10 +1,11 @@
 # Unlimited Machine Translator
 [![Latest Release](https://img.shields.io/pypi/v/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
-[![License](https://img.shields.io/pypi/l/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://github.com/Axel-Vs/unlimited_machine_translator/blob/main/LICENSE)
+[![License](https://img.shields.io/pypi/l/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=yellow)](https://github.com/Axel-Vs/unlimited_machine_translator/blob/main/LICENSE)
 [![Wheel](https://img.shields.io/pypi/wheel/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
-[![Powered by deep-translator](https://img.shields.io/badge/Powered%20by-deep--translator-black?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/deep-translator/)
+[![Powered by deep-translator](https://img.shields.io/badge/Powered%20by-deep--translator-black?style=flat-square&labelColor=blue&color=%23006400)](https://pypi.org/project/deep-translator/)
 [![Status](https://img.shields.io/pypi/status/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=green)](https://pypi.org/project/unlimited_machine_translator/)
-[![Downloads](https://img.shields.io/pypi/dm/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
+[![Downloads](https://img.shields.io/badge/Downloads-unlimited--machine--translator-blue?style=flat-square&logoColor=white&link=https://pepy.tech/project/unlimited-machine-translator&color=%23006400)](https://pepy.tech/project/unlimited-machine-translator)
+
 
 Introducing the Unlimited Machine Translator, a Python package that enables you to translate all your data frames and doc files without restrictions! This powerful tool is designed for translating large datasets using the Google Translate API and is powered by the deep-translator library. The unlimited_machine_translation package offers automatic language detection, ensuring accurate translations for your content. Additionally, it removes translation limits by processing data in batches, making it an ideal solution for handling extensive data sets.
 
