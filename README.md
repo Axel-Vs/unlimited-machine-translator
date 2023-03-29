@@ -18,7 +18,7 @@ To install the Unlimited Machine Translator, run the following commands
 pip install unlimited-machine-translator
 ```
 
-2. Install the latest version from the GitHub repository:
+2. Install the development version directly from the GitHub repository:
 ```bash
 pip install git+https://github.com/Axel-Vs/unlimited_machine_translator.git
 ```
