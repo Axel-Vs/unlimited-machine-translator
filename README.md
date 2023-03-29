@@ -2,7 +2,6 @@
 
 [![Latest Release](https://img.shields.io/pypi/v/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
 [![License](https://img.shields.io/pypi/l/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://github.com/Axel-Vs/unlimited_machine_translator/blob/main/LICENSE)
-[![Downloads](https://img.shields.io/pypi/dm/unlimited_machine_translator.svg?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/unlimited_machine_translator/)
 [![Powered by deep-translator](https://img.shields.io/badge/Powered%20by-deep--translator-black?style=flat-square&labelColor=black&color=blue)](https://pypi.org/project/deep-translator/)
 
 
@@ -32,13 +31,14 @@ After installing the package, you can use it in your Python scripts or Jupyter n
 
 ```python
 import pandas as pd
+from deep_translator import GoogleTranslator
 from unlimited_machine_translator.translator import machine_translator_df
 
 # Load your dataset
 data = pd.read_csv("your_dataset.csv")
 
 # Translate the desired column
-translated_data = machine_translator_df(data, source_language="en", target_language="es", column_name="text_column")
+translated_data = machine_translator_df(data_set=data, column_name="text_column", target_language="en", Translator=GoogleTranslator, current_wd=os.getcwd())
 
 # Save the translated data
 translated_data.to_csv("translated_dataset.csv", index=False)

@@ -25,7 +25,7 @@ def makemydir(current_wd, new_directory):
     os.chdir(new_directory)
     
 # --------------------------------------------- DataFrame Machine Translator ---------------------------------------------
-def machine_translator_split(target_language, current_wd, df, column_name, Translator):
+def machine_translator_df(target_language, current_wd, df, column_name, data_set_name, Translator):
     """
     Splits the column to be translated into batches, according to the translator we could have different limits in characters, e.g., google translator limit is 5,000 in one request.
     Stores the batches in CSVs.
@@ -33,6 +33,7 @@ def machine_translator_split(target_language, current_wd, df, column_name, Trans
     current_wd: working directory (location for storing the batches)
     df: Data Frame that will be translated
     column_name: Column to be translated
+    data_set_name: Abbreviation name for storing purposes
 
     Output:
     Location of the csv files
@@ -58,8 +59,12 @@ def machine_translator_split(target_language, current_wd, df, column_name, Trans
 
     max_batch = np.max(sub_df[batch_name])
     print('\nMaximum number of batches:', int(max_batch))
+
+    # Create storing folder 
+    data_set_name_without_extension = data_set_name.replace(".csv", "")
+    data_set_name_without_extension = data_set_name.replace(".docx", "")
     
-    folder_name = column_name + '_' + target_language
+    folder_name = data_set_name_without_extension + '_'  + column_name + '_' + target_language
     makemydir(current_wd, folder_name)
 
     for i in range(1, int(max_batch)+1):
@@ -81,7 +86,7 @@ def machine_translator_split(target_language, current_wd, df, column_name, Trans
         finished_batch_translation = pd.concat([source_to_translate.reset_index(drop=True), stored_translated], axis=1)
 
         # Batch file name
-        store_name = column_name + '_' + 'batch_' + str(i) + '.csv'
+        store_name = data_set_name + '_' + column_name + '_' + 'batch_' + str(i) + '.csv'
 
         # Store
         finished_batch_translation.to_csv(store_name, encoding='utf-16', index=False, sep = '|')
@@ -97,7 +102,7 @@ def machine_translator_split(target_language, current_wd, df, column_name, Trans
 
 def merge_csvs(target_language, stored_location, df, column_name):
     """
-    Reads all the csv files from "machine_translation" function with the original dataframe
+    Reads all the csv files from "machine_transaltion" function with the original dataframe
     Input
     stored_location: working directory (location for storing the batches)
     df: Original dataframe that was translated
@@ -125,16 +130,6 @@ def merge_csvs(target_language, stored_location, df, column_name):
 
     print('Number of files read:', len(files))
     return all_df
-
-    
-def machine_translator_df(data_set, column_name, target_language, Translator, current_wd):
-    # -------------------- Translate datset by batches (stored in multiple .csv) ---------------------
-    stored_location = machine_translator_split(target_language, current_wd, data_set, column_name, Translator)
-    print('Dataset was divided by batches located in:', stored_location)
-    # ----------------------------- Merge the translated .csv files -----------------------------------
-    df_merged_translation = merge_csvs(target_language, stored_location, data_set, column_name)
-
-    return df_merged_translation
 
 
 def store_translation(data_set, output_path, output_name):
@@ -224,7 +219,7 @@ def replace_consecutive_chars(text, pattern='-'):
 
 
 
-def machine_translator_doc(text, target_language, Translator, root):
+def machine_translator_doc(target_language, root, text, data_name, Translator):
     """
     This function takes in text data stored in a Word document and translates it into the target language using the specified machine translation service provider.
 
@@ -246,11 +241,11 @@ def machine_translator_doc(text, target_language, Translator, root):
     s_text = text.replace('\n', ' -')
     sentences = sent_tokenize(s_text)
 
-    # Convert it to df in order to use the function "machine_translator_split"
+    # Convert it to df in order to use the function "machine_translator_df"
     df = pd.DataFrame(sentences, columns=['Sentence'])
-    # Call the machine_translator_split function to perform the translation
-    stored_location= machine_translator_split(target_language, root, df, 'Sentence', Translator)
-
+    # Call the machine_translator_df function to perform the translation
+    stored_location= machine_translator_df(target_language, root, df, 'Sentence', data_name, Translator)
+   
     # Merge the translated CSV files into a complete translated DataFrame
     df_merged_translation = merge_csvs(target_language, stored_location, df, 'Sentence')
 
