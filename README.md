@@ -7,7 +7,7 @@
 [![Downloads](https://static.pepy.tech/personalized-badge/unlimited-machine-translator?period=total&units=international_system&left_color=black&right_color=%23006400&left_text=Downloads)](https://pepy.tech/project/unlimited-machine-translator)
 
 
-Introducing the Unlimited Machine Translator, a Python package that enables you to translate all your data frames and doc files without restrictions! This powerful tool is designed for translating large datasets using the Google Translate API and is powered by the deep-translator library. The unlimited_machine_translation package offers automatic language detection, ensuring accurate translations for your content. Additionally, it removes translation limits by processing data in batches, making it an ideal solution for handling extensive data sets.
+Introducing the Unlimited Machine Translator, a Python package that enables you to translate all your data frames and doc files without restrictions, and with no API key required! This powerful tool is designed for translating large datasets using the Google Translate API and is powered by the deep-translator library. The unlimited_machine_translation package offers automatic language detection, ensuring accurate translations for your content. Additionally, it removes translation limits by processing data in batches, making it an ideal solution for handling extensive data sets.
 
 
 ## Installation
